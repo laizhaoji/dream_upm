@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.upm.role.mapper.RoleMapper">
+    <insert id="insert" parameterType="com.dream.upm.role.domain.Role">
+        INSERT INTO upm_role (id,role_code,role_name,creater,create_time,rec_status,version) VALUES (
+         #{id},
+        #{roleCode},
+        #{roleName},
+        #{creater},
+        #{createTime},
+        #{recStatus},
+        #{version}
+        )
+    </insert>
+
+    <select id="selectPageVo" resultType="com.dream.upm.role.domain.Role">
+        select id,role_code,role_name,creater,create_time,rec_status,version from upm_role
+    </select>
+
+</mapper>
